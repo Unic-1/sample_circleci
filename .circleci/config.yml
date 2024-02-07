@@ -18,6 +18,9 @@ jobs:
       - run:
           name: install packages
           command: npm ci
+      - run:
+          name: print
+          command: echo 'Print'
       - save_cache:
           key: node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
           paths:
