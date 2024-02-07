@@ -1,0 +1,27 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: "Run test"
+          command: echo 'Test Ran'
+  build:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: The First Step update
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+
+workflows:
+  my-flow:
+    jobs:
+      - test
+      - build:
+          filters:
+            branches:
+              only: main
