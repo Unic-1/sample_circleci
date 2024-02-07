@@ -15,8 +15,7 @@ jobs:
 workflows:
   workflow:
     when:
-      condition:
+      and:
         - equal: [dummy, << pipeline.git.branch >>]
     jobs:
-      - build:
-          p: 4
+      - build
