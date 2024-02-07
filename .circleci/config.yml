@@ -22,5 +22,5 @@ workflows:
     - test
     - build
       filters:
-      branches:
-        only: main
+        branches:
+          only: main
