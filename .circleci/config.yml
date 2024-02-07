@@ -16,4 +16,4 @@ workflows:
   workflow:
     jobs:
       - build:
-          p: 2
+          p: 4
