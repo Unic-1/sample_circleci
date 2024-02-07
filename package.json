@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Unic-1/sample_circleci/issues"
   },
-  "homepage": "https://github.com/Unic-1/sample_circleci#readme"
+  "homepage": "https://github.com/Unic-1/sample_circleci#readme",
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
 }
