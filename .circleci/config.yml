@@ -18,9 +18,10 @@ jobs:
             echo 'This is the delivery pipeline'
 
 workflows:
-  jobs:
-    - test
-    - build:
-        filters:
-          branches:
-            only: main
+  my-flow:
+    jobs:
+      - test
+      - build:
+          filters:
+            branches:
+              only: main
