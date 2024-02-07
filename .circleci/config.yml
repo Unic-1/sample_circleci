@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   # running commands on a basic image
-  deploy:
+  Hello-World:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -30,14 +30,13 @@ jobs:
           name: Running the Node Container
           command: |
             node -v
-
-# workflows:
-#   Example-Workflow:
-#     jobs:
-#       - Hello-World
-#       - Fetch-Code:
-#           requires:
-#             - Hello-World
-#       - Using-Node:
-#           requires:
-#             - Fetch-Code
+workflows:
+  Example-Workflow:
+    jobs:
+      - Hello-World
+      - Fetch-Code:
+          requires:
+            - Hello-World
+      - Using-Node:
+          requires:
+            - Fetch-Code
