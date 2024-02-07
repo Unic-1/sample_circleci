@@ -3,10 +3,10 @@ jobs:
   test:
     docker:
       - image: alpine:3.15
-    setps:
+    steps:
       - run:
-        name: "Run test"
-        command: echo 'Test Ran'
+          name: "Run test"
+          command: echo 'Test Ran'
   build:
     docker:
       - image: alpine:3.15
