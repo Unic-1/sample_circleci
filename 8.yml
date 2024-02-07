@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build:
+    parameters:
+      p:
+        type: integer
+        default: 1
+    parallelism: << parameters.p >>
+    machine:
+      image: ubuntu-2204:2023.07.2
+    steps:
+      - checkout
+
+workflows:
+  workflow:
+    when:
+      and:
+        - equal: [dummy, << pipeline.git.branch >>]
+    jobs:
+      - build
