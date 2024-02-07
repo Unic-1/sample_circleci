@@ -1,0 +1,30 @@
+version: 2.1
+
+executors:
+  docker-executor:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+  ubuntu_20-04-executor:
+    machine:
+      image: `ubuntu-2004:202010-01`
+
+jobs:
+  run-tests-on-docker:
+    executor: docker-executor
+    steps:
+      - checkout
+      - run: ruby unit_test.rb
+  run-tests-on-ubuntu-20-04:
+    executor: ubuntu_20-04
+      - run-tests-on-docker
+      - run-tests-on-ubuntu-20-04
+
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+
+work
+      
